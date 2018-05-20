@@ -1,0 +1,37 @@
+<div class="container" ng-controller="AddUserController">
+    <div class="row row-content">
+        <div class="col-xs-12"><h3>Register</h3></div>
+        <div class="col-xs-12 col-sm-4">
+            <form class="form-horizontal" role="form" name="loginform" ng-submit="register()" novalidate>
+                <div class="form-group" ng-class="{'has-error':loginform.username.$error.required && !loginform.username.$pristine }">
+                    <input type="text" class="form-control" id="username" ng-model="username" name="username" placeholder="Username" required>
+                    <span ng-show="loginform.username.$error.required && !loginform.username.$pristine" class="help-block">Username Required</span>
+                </div>
+                <div class="form-group" ng-class="{'has-error':loginform.password.$error.required && !loginform.password.$pristine }">
+                    <input type="password" class="form-control" id="password" ng-model="password" name="password" placeholder="Password" required>
+                    <span ng-show="loginform.password.$error.required && !loginform.password.$pristine" class="help-block">Password Required</span>
+                </div>
+                <div class="form-group" ng-class="{'has-error has-feedback':loginform.email.$invalid && !loginform.email.$pristine }">
+                    <input type="email" class="form-control" id="email" ng-model="email" name="email" placeholder="E-mail address" required>
+                    <span ng-show="(loginform.email.$error.required || loginform.email.$invalid) && !loginform.email.$pristine" class="help-block">Enter Valid Email</span>
+
+                </div>
+                <div class="form-group" ng-class="{'has-error':loginform.address.$error.required && !loginform.address.$pristine }">
+                    <textarea type="textarea" id="address" class="form-control" ng-model="address" id ="address" name="address" placeholder="Address" required></textarea>
+                    <span ng-show="loginform.address.$error.required && !loginform.address.$pristine" class="help-block">Address Required</span>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label><input type="checkbox" ng-model="admin.agree">Make Admin?</label>
+                      </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <button type="submit" class="btn btn-primary" ng-disabled="loginform.$invalid">Register</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

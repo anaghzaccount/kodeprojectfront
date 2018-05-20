@@ -1,0 +1,33 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container" ng-controller="LoginController">
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a ui-sref="app">
+                    <span class="fa fa-home"
+                        aria-hidden="true"></span> Login</a></li>
+                <li><a ui-sref="app.register">
+                    <span class="fa fa-info-circle"
+                        aria-hidden="true"></span> Register</a></li>
+                <li><a ui-sref="app.dashboard">
+                        <span class="fa fa-list"
+                        aria-hidden="true"></span> Dashboard</a></li>
+                    <li ><a ui-sref="app.user">
+                    <span class="fa fa-user"
+                        aria-hidden="true"></span> Add User</a>
+                    </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li ng-if="!loggedIn"><a ng-click="openLogin()">
+                <span class="fa fa-sign-in"></span> Login</a>
+                </li>
+                <li ng-if="loggedIn">
+                <a>{{username}}</a>
+                </li>
+                <li ng-if="loggedIn">
+                <a ng-click="logOut()">
+                <span class="fa fa-sign-in"></span> Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>         

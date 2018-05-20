@@ -1,0 +1,30 @@
+<div class="container" ng-controller="DashboardController">
+    <div class="row row-content">
+        <div class="col-sm-12 dashdiv">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>User ID</th>
+                            <th>Name</th>
+                            <th>E-Mail</th>
+                            <th>Address</th>
+                            <th>Role</th>
+                            <th>Change Role</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody ng-repeat="user in users">
+                        <td>{{user._id}}</td>
+                        <td><a ui-sref="app.edituser({id:user._id})">{{user.username}}</a></td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.address}}</td>
+                        <td>{{user.admin}}</td>
+                        <td><a ui-sref="app.editrole({id:user._id})"><b>Edit</b></a></td>
+                        <td><button class="btn btn-warning" ng-click="deleteuser(user._id)">Delete</button></td>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
